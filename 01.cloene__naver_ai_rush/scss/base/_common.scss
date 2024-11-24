@@ -42,9 +42,9 @@ article{display: block;}
 .more__btn,.list__btn,.swiper-button-next,.swiper-button-prev{
     &.ico__arrow-right:hover::before{transform: $ico__arrow-right--hover;}
     &.ico__arrow-left:hover::before{transform: $ico__arrow-left--hover;}
-    &:hover::before{
-        .ico__arrow-right{transform: $ico__arrow-right--hover;}
-        .ico__arrow-left{transform: $ico__arrow-left--hover;} 
+    &:hover{
+        .ico__arrow-right::before{transform: $ico__arrow-right--hover;}
+        .ico__arrow-left::before{transform: $ico__arrow-left--hover; transition: $ico__arrow--transition;} 
     }
 }
 

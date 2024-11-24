@@ -268,12 +268,13 @@ article {
   transform: translateX(-4px);
 }
 
-.more__btn:hover::before .ico__arrow-right, .list__btn:hover::before .ico__arrow-right, .swiper-button-next:hover::before .ico__arrow-right, .swiper-button-prev:hover::before .ico__arrow-right {
+.more__btn:hover .ico__arrow-right::before, .list__btn:hover .ico__arrow-right::before, .swiper-button-next:hover .ico__arrow-right::before, .swiper-button-prev:hover .ico__arrow-right::before {
   transform: translateX(4px);
 }
 
-.more__btn:hover::before .ico__arrow-left, .list__btn:hover::before .ico__arrow-left, .swiper-button-next:hover::before .ico__arrow-left, .swiper-button-prev:hover::before .ico__arrow-left {
+.more__btn:hover .ico__arrow-left::before, .list__btn:hover .ico__arrow-left::before, .swiper-button-next:hover .ico__arrow-left::before, .swiper-button-prev:hover .ico__arrow-left::before {
   transform: translateX(-4px);
+  transition: transform 0.3s ease-in-out;
 }
 
 .list__style--bullet > li {
@@ -1016,7 +1017,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   gap: 10px;
 }
 .page--main .main__contents.main__contents--review .swiper .swiper-button-next, .page--main .main__contents.main__contents--review .swiper .swiper-button-prev {
-  overflow: hidden;
   position: unset;
   width: 40px;
   height: 40px;
@@ -1984,8 +1984,10 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     display: flex;
     font-size: 15px;
   }
-  .page--main .main__contents.main__contents--gallery .more__btn::before {
+  .page--main .main__contents.main__contents--gallery .more__btn .ico__arrow-right::before {
     font-size: 23px;
+    margin-left: 10px;
+    margin-top: 2px;
   }
   .page--main .main__contents.main__contents--gallery .output__list {
     gap: 0;
@@ -2149,7 +2151,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   gap: 10px;
 }
 .page--biz .sub__contents--biz .section--title .swiper .swiper-button-next, .page--biz .sub__contents--biz .section--title .swiper .swiper-button-prev {
-  overflow: hidden;
   position: unset;
   width: 40px;
   height: 40px;
