@@ -112,6 +112,12 @@ $(function(){
         $(this).addClass("on");
 
         // biz
+        if($(tab).siblings(".tab__contents")){
+            $(".tab__contents").removeClass("on");
+            $(".tab__contents").eq(tabIdx).addClass("on");
+        }
+
+        // biz
         if($(tab).siblings(".biz__list__wrap")){
             $(".biz__list__wrap>ul").removeClass("on");
             $(".biz__list__wrap>ul").eq(tabIdx).addClass("on");

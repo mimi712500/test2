@@ -11,10 +11,17 @@ $color--darkgray: #919191;
 $color--pinkviolet : #CF3BA8;
 $color--purple : #8A53E6;
 $color--blueviolet : #41A1F6;
-$color--blue : #2b65fe;
+$color--blue41 : #2b65fe;
+$color--blue1f : #1f88ea;
+$color--blue11 : #11a0b8;
+$color--green : #01B676;
+
+// color gradient
 $color--gradient : $color--pinkviolet, $color--purple, $color--blueviolet;
 $color--point-gradient : linear-gradient(90deg, $color--gradient);
 $color--point-gradient--revese : linear-gradient(-90deg, $color--gradient);
+$color--gradient02 : $color--blue1f, $color--blue11, $color--green;
+$color--point-gradient02 : linear-gradient(90deg, $color--gradient02);
 
 
 // color opacity
@@ -27,7 +34,7 @@ $border-color--lightgraydd : #DDDDDD;
 $border-color--darkgray : $color--darkgray;
 $border-color--black : $color--black;
 $border-color--black1a : $color--black1a;
-$border-color--blue : $color--blue;
+$border-color--blue : $color--blue41;
 
 // border color opacity
 $border-color--white--opacity--03: rgba($border-color--white,0.3);
@@ -42,11 +49,14 @@ $font-color--white : $color--white;
 $font-color--black : $color--black;
 $font-color--black1a : $color--black1a;
 $font-color--lightgrayd9 : #d9d9d9;
-$font-color--blue : $color--blue;
+$font-color--blue : $color--blue41;
 $font-color--mintgreen : #73e7a8;
 $font-color--pinkvioletbb : #bb45be;
 $font-color--purple89 : #8932d2;
 $font-color--blueviolet55 : #551ce6;
+$font-color--blue1f : $color--blue1f;
+$font-color--blue11 : $color--blue11;
+$font-color--green : $color--green;
 
 // font status
 $font-color--placeholder : #DADADA;

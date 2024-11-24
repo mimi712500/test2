@@ -45,6 +45,14 @@
   transform: unset;
 }
 
+@keyframes xRollring {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1022,6 +1030,7 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   display: none;
 }
 .page--main .main__contents.main__contents--outline {
+  overflow: hidden;
   padding-top: 436px;
 }
 .page--main .main__contents.main__contents--outline .tab__list {
@@ -1059,7 +1068,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
 .page--main .main__contents.main__contents--outline .ft--color--point {
   position: relative;
   color: transparent;
-  background-image: linear-gradient(90deg, #CF3BA8, #8A53E6, #41A1F6);
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -1070,10 +1078,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   left: 0;
   width: 100%;
   height: 3px;
-  background-image: linear-gradient(90deg, #CF3BA8, #8A53E6, #41A1F6);
-}
-.page--main .main__contents.main__contents--outline .tab__contents > div:not(.title__wrap, .deduce) {
-  margin-top: 230px;
 }
 .page--main .main__contents.main__contents--outline h3 {
   line-height: 48px;
@@ -1086,50 +1090,123 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   font-size: 25px;
   font-weight: 800;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce {
+.page--main .main__contents.main__contents--outline .tab__contents {
+  display: none;
+}
+.page--main .main__contents.main__contents--outline .tab__contents.on {
+  display: block;
+}
+.page--main .main__contents.main__contents--outline .tab__contents > div:not(.title__wrap, .deduce) {
+  margin-top: 230px;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .deduce {
   margin-top: 144px;
   font-weight: 400;
   line-height: 27px;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce em {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce em {
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce em + p {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce em + p {
   margin-top: 25px;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce .deduce__list {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce .deduce__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-items: flex-start;
   gap: 26px;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce li {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce li {
   position: relative;
   flex: 1;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce li::before {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce li::before {
   width: 100%;
   height: 168px;
   display: block;
   margin-bottom: 76px;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce li:nth-child(1)::before {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce li:nth-child(1)::before {
   content: "";
   background: url("./../images/main/icon__shape01.png") no-repeat center center/contain;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce li:nth-child(2)::before {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce li:nth-child(2)::before {
   content: "";
   background: url("./../images/main/icon__shape02.png") no-repeat center center/contain;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce li:nth-child(3)::before {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce li:nth-child(3)::before {
   content: "";
   background: url("./../images/main/icon__shape03.png") no-repeat center center/contain;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .deduce li:nth-child(4)::before {
+.page--main .main__contents.main__contents--outline .tab__contents .deduce li:nth-child(4)::before {
   content: "";
   background: url("./../images/main/icon__shape04.png") no-repeat center center/contain;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1123px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 85px;
+  padding: 20px;
+  line-height: 34px;
+  font-size: 20px;
+  border-radius: 321px;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  width: 321px;
+  height: 321px;
+  border-radius: 50%;
+  text-align: center;
+  color: #ffffff;
+  background-size: 1123px;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list li:nth-child(1) {
+  background-position: left;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list li:nth-child(2) {
+  background-position: center;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list li:nth-child(3) {
+  background-position: right;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list .num::before {
+  content: "0";
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list em, .page--main .main__contents.main__contents--outline .tab__contents .program .program__list p {
+  z-index: 1;
+  position: relative;
+}
+.page--main .main__contents.main__contents--outline .tab__contents .program .program__list em + p {
+  margin-top: 10px;
+}
+.page--main .main__contents.main__contents--outline .tab__contents--student .ft--color--point {
+  background-image: linear-gradient(90deg, #CF3BA8, #8A53E6, #41A1F6);
+}
+.page--main .main__contents.main__contents--outline .tab__contents--student .ft--color--point::after {
+  background-image: linear-gradient(90deg, #CF3BA8, #8A53E6, #41A1F6);
 }
 .page--main .main__contents.main__contents--outline .tab__contents--student .eligibility {
   line-height: 30px;
@@ -1152,65 +1229,11 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
 .page--main .main__contents.main__contents--outline .tab__contents--student .eligibility .list__style--bullet > li:not(:last-child) {
   margin-bottom: 25px;
 }
-.page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1123px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 85px;
-  padding: 20px;
-  line-height: 34px;
-  font-size: 20px;
-  border-radius: 321px;
-}
 .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   background-image: linear-gradient(90deg, #CF3BA8, #8A53E6, #41A1F6);
-  opacity: 0.6;
 }
 .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  width: 321px;
-  height: 321px;
-  border-radius: 50%;
-  text-align: center;
-  color: #ffffff;
-  background-size: 1123px;
   background-image: linear-gradient(90deg, #CF3BA8, #8A53E6, #41A1F6);
-}
-.page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(1) {
-  background-position: left;
-}
-.page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(2) {
-  background-position: center;
-}
-.page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(3) {
-  background-position: right;
-}
-.page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list .num::before {
-  content: "0";
-}
-.page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list em, .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list p {
-  z-index: 1;
-  position: relative;
-}
-.page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list em + p {
-  margin-top: 10px;
 }
 .page--main .main__contents.main__contents--outline .tab__contents--student .plan .plan__list {
   display: flex;
@@ -1292,6 +1315,34 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   text-align: right;
   line-height: 34px;
 }
+.page--main .main__contents.main__contents--outline .tab__contents--startup .ft--color--point {
+  background-image: linear-gradient(90deg, #1f88ea, #11a0b8, #01B676);
+}
+.page--main .main__contents.main__contents--outline .tab__contents--startup .ft--color--point::after {
+  background-image: linear-gradient(90deg, #1f88ea, #11a0b8, #01B676);
+}
+.page--main .main__contents.main__contents--outline .tab__contents--startup .program .program__list::before {
+  background-image: linear-gradient(90deg, #1f88ea, #11a0b8, #01B676);
+}
+.page--main .main__contents.main__contents--outline .tab__contents--startup .program .program__list li {
+  background-image: linear-gradient(90deg, #1f88ea, #11a0b8, #01B676);
+}
+.page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list__wrap {
+  margin-top: 60px;
+}
+.page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: -50px;
+}
+.page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list li {
+  flex: 1 0 20%;
+  padding: 15px 0 0 50px;
+}
+.page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list li .img__wrap:hover img {
+  transform: unset;
+}
 .page--main .main__contents.main__contents--gallery .title__wrap {
   display: flex;
   justify-content: space-between;
@@ -1309,7 +1360,10 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
 }
 .page--main .main__contents.main__contents--gallery .output__list li {
   padding-bottom: 110px;
-  flex: 0 1 calc(25% - 19.5px); /* (gap - gap / 항목 수 )*/
+  /* (gap - gap / 항목 수 )*/
+  flex-basis: calc(25% - 19.5px);
+  flex-grow: 0;
+  flex-shrink: 1;
 }
 .page--main .main__contents.main__contents--gallery .output__list a {
   display: block;
@@ -1484,9 +1538,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     top: 4px;
     font-size: 19px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents > div:not(.title__wrap, .deduce) {
-    margin-top: 160px;
-  }
   .page--main .main__contents.main__contents--outline .ft--color--point::after {
     height: 1px;
     bottom: 5px;
@@ -1499,22 +1550,38 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     line-height: 26px;
     font-size: 18px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce {
+  .page--main .main__contents.main__contents--outline .tab__contents > div:not(.title__wrap, .deduce) {
+    margin-top: 160px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce {
     margin-top: 93px;
     line-height: 22px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce .deduce__list {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce .deduce__list {
     gap: 12px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce li::before {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce li::before {
     height: 88px;
     margin-bottom: 40px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce em {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce em {
     padding-top: 16px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce em + p {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce em + p {
     margin-top: 15px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list {
+    gap: 23px;
+    width: fit-content;
+    margin-top: 47px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 27px;
+    border-radius: 203px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list li {
+    width: 203px;
+    height: 203px;
   }
   .page--main .main__contents.main__contents--outline .tab__contents--student .eligibility {
     font-size: 18px;
@@ -1531,19 +1598,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     height: 7px;
     top: 7px;
     margin-right: 14px;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list {
-    gap: 23px;
-    width: fit-content;
-    margin-top: 47px;
-    padding: 12px;
-    font-size: 13px;
-    line-height: 27px;
-    border-radius: 203px;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li {
-    width: 203px;
-    height: 203px;
   }
   .page--main .main__contents.main__contents--outline .tab__contents--student .plan .plan__list {
     margin-top: 60px;
@@ -1586,6 +1640,9 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   .page--main .main__contents.main__contents--outline .tab__contents--student .schedule .box__list .bottom {
     margin-top: 20px;
     line-height: 27px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list__wrap {
+    margin-top: 30px;
   }
   .page--main .main__contents.main__contents--gallery {
     padding-top: 160px;
@@ -1704,9 +1761,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     left: calc(100% + 12px);
     font-size: 13px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents > div:not(.title__wrap, .deduce) {
-    margin-top: 120px;
-  }
   .page--main .main__contents.main__contents--outline h3 {
     line-height: 39px;
     font-size: 26px;
@@ -1715,27 +1769,87 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     line-height: 22px;
     font-size: 15px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce {
+  .page--main .main__contents.main__contents--outline .tab__contents > div:not(.title__wrap, .deduce) {
+    margin-top: 120px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce {
     margin-top: 80px;
     line-height: 20px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce .deduce__list {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce .deduce__list {
     gap: 11px;
     flex-wrap: wrap;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce li {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce li {
     flex-basis: calc(50% - 5.5px);
     font-size: 12px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce li:not(:nth-last-child(-n+2)) {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce li:not(:nth-last-child(-n+2)) {
     margin-bottom: 60px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce li::before {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce li::before {
     height: 120px;
     margin-bottom: 40px;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .deduce em + p {
+  .page--main .main__contents.main__contents--outline .tab__contents .deduce em + p {
     margin-top: 10px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list {
+    all: unset;
+    position: relative;
+    line-height: 20px;
+    font-size: 12px;
+    display: block;
+    margin-top: 50px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list::before {
+    display: none;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list::after {
+    content: "";
+    position: absolute;
+    left: calc(0% - 30px);
+    bottom: 0;
+    width: calc(100% + 30px + 30px);
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(65, 161, 246, 0), rgba(65, 161, 246, 0.2));
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list li {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0 0 40px 48px;
+    text-align: left;
+    color: #1a1a1a;
+    border-radius: unset;
+    background: unset;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list li .num + br {
+    display: none;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list em {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -48px;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 900;
+    border-radius: 50%;
+    color: #ffffff;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents .program .program__list .num::before {
+    display: none;
   }
   .page--main .main__contents.main__contents--outline .tab__contents--student .eligibility {
     font-size: 15px;
@@ -1755,80 +1869,23 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   .page--main .main__contents.main__contents--outline .tab__contents--student .eligibility .list__style--bullet > li::before {
     display: none;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list {
-    all: unset;
-    position: relative;
-    line-height: 20px;
-    font-size: 12px;
-    display: block;
-    margin-top: 50px;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list::before {
-    display: none;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list::after {
-    content: "";
-    position: absolute;
-    left: calc(0% - 30px);
-    bottom: 0;
-    width: calc(100% + 30px + 30px);
-    height: 100%;
-    background-image: linear-gradient(180deg, rgba(65, 161, 246, 0), rgba(65, 161, 246, 0.2));
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 0 0 40px 48px;
-    text-align: left;
-    color: #1a1a1a;
-    border-radius: unset;
-    background: unset;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li .num + br {
-    display: none;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(1) em {
+  .page--main .main__contents.main__contents--outline .tab__contents--student .program li:nth-child(1) em {
     color: #bb45be;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(1) .num {
+  .page--main .main__contents.main__contents--outline .tab__contents--student .program li:nth-child(1) .num {
     background-color: #CF3BA8;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(2) em {
+  .page--main .main__contents.main__contents--outline .tab__contents--student .program li:nth-child(2) em {
     color: #8932d2;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(2) .num {
+  .page--main .main__contents.main__contents--outline .tab__contents--student .program li:nth-child(2) .num {
     background-color: #8A53E6;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(3) em {
+  .page--main .main__contents.main__contents--outline .tab__contents--student .program li:nth-child(3) em {
     color: #551ce6;
   }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list li:nth-child(3) .num {
+  .page--main .main__contents.main__contents--outline .tab__contents--student .program li:nth-child(3) .num {
     background-color: #41A1F6;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list em {
-    display: block;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list .num {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: -48px;
-    top: 0;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    font-size: 14px;
-    font-weight: 900;
-    border-radius: 50%;
-    color: #ffffff;
-  }
-  .page--main .main__contents.main__contents--outline .tab__contents--student .program .program__list .num::before {
-    display: none;
   }
   .page--main .main__contents.main__contents--outline .tab__contents--student .plan .plan__list {
     margin-top: 30px;
@@ -1875,6 +1932,43 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   }
   .page--main .main__contents.main__contents--outline .tab__contents--student .schedule .box__list .bottom {
     line-height: 26px;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .program li:nth-child(1) em {
+    color: #1f88ea;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .program li:nth-child(1) .num {
+    background-color: #1f88ea;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .program li:nth-child(2) em {
+    color: #11a0b8;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .program li:nth-child(2) .num {
+    background-color: #11a0b8;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .program li:nth-child(3) em {
+    color: #01B676;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .program li:nth-child(3) .num {
+    background-color: #01B676;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list__wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list__wrap .partner__list {
+    animation-name: xRollring;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    flex: 1 0 600px;
+    margin-left: 0;
+  }
+  .page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list__wrap .partner__list li {
+    width: 150px;
+    flex: unset;
+    padding-left: 30px;
   }
   .page--main .main__contents.main__contents--gallery {
     padding-top: 100px;
@@ -2000,7 +2094,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   overflow: hidden;
 }
 .page--biz .sub__contents--biz .section--title .swiper {
-  height: 595px;
   padding-top: 56px;
   overflow-y: unset;
   overflow-x: clip;
@@ -2440,8 +2533,7 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     font-size: 13px;
   }
   .page--biz .sub__contents--biz .section--title .swiper {
-    overflow: unset;
-    height: 390px;
+    overflow: unset; /*height:390px;*/
   }
   .page--biz .sub__contents--biz .section--title .swiper .img__wrap {
     width: 536px;
@@ -2605,7 +2697,6 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
     font-size: 26px;
   }
   .page--biz .sub__contents--biz .section--title .swiper {
-    height: 233px;
     padding-top: 50px;
   }
   .page--biz .sub__contents--biz .section--title .swiper .img__wrap {

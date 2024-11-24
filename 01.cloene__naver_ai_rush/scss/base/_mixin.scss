@@ -145,3 +145,17 @@
     }
 }
 
+
+
+// keyframe
+@mixin horizontalRollring($duration:15s){
+    animation-name: xRollring;
+    animation-duration: #{$duration};
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;}
+
+@keyframes xRollring {
+    from{transform: translateX(0);}
+    to{transform: translateX(-100%);}
+}
