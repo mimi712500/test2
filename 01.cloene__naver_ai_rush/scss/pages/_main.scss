@@ -612,7 +612,9 @@ $position__area--relative--padding: (230px 0);
                 font-size: $font-size--13; 
                 .title__wrap{ 
                     padding-top: 30px; flex-direction: column-reverse; gap: 15px;
-                    h2{display: block; font-size: $font-size--30; line-height: $line-height--42;}
+                    h2{display: block; max-width: 475px; font-size: $font-size--30; line-height: $line-height--42;
+                        br{display: none;}
+                    }
                     .start__btn{width: 170px; height: 46;}
                 }
                 .more__btn{

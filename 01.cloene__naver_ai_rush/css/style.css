@@ -542,11 +542,11 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   left: 0;
   width: 100%;
   height: 88px;
-  transform: translateY(-100%);
+  transform: translateY(0);
   transition: transform 0.5s ease-in-out;
 }
-#header.on {
-  transform: unset;
+#header.top {
+  transform: translateY(-100%);
 }
 #header.header--blend-mode {
   mix-blend-mode: exclusion;
@@ -2010,8 +2010,12 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
   }
   .page--main .main__contents.main__contents--various .title__wrap h2 {
     display: block;
+    max-width: 475px;
     font-size: 30px;
     line-height: 42px;
+  }
+  .page--main .main__contents.main__contents--various .title__wrap h2 br {
+    display: none;
   }
   .page--main .main__contents.main__contents--various .title__wrap .start__btn {
     width: 170px;

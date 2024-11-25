@@ -84,11 +84,11 @@ $(function(){
         }
     };
     // header (스크롤 시) 보이기/숨기기
-    function isHeaderOn(boolean){
+    function isHeaderTop(boolean){
         if(boolean){
-            $("#header").addClass("on"); // 보이기
+            $("#header").removeClass("top"); // 보이기
         }else{
-            $("#header").removeClass("on"); // 숨기기
+            $("#header").addClass("top"); // 숨기기
         }
     };
 
@@ -143,10 +143,10 @@ $(function(){
         const wH = $(window).height();
 
         if (prevScrollTop < scrollTop) { // 내림
-            isHeaderOn(false);
+            isHeaderTop(false);
             
         } else if(prevScrollTop >= scrollTop || scrollTop <= 10){ // 올림 || 스크롤 10 이하일 때
-            isHeaderOn(true);
+            isHeaderTop(true);
         }
         prevScrollTop = scrollTop;
     }
