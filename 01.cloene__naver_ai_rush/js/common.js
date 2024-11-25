@@ -2,7 +2,7 @@ $(function(){
 
     // 초기화
     function init(){
-        $("#header").addClass("on header--blend-mode");
+        $("#header").addClass("header--blend-mode");
     }init();
 
     // 레이아웃
@@ -145,9 +145,11 @@ $(function(){
         if (prevScrollTop < scrollTop) { // 내림
             isHeaderTop(true);
             
-        } else if(prevScrollTop >= scrollTop || scrollTop >= 10){ // 올림 || 스크롤 10 이하일 때
+        } else if(prevScrollTop >= scrollTop){ // 올림 
             isHeaderTop(false);
         }
+
+        if( scrollTop <= 10)  isHeaderTop(false); // 스크롤 10 이하일 때
         prevScrollTop = scrollTop;
     }
 
