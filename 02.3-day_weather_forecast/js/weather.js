@@ -45,7 +45,6 @@ function geocoding(position){
 
 // 텍스트 삽입
 function insertData(data){
-    console.log(data)
     const current = data.current;
     const forecast = data.forecast;
     const currentHour = timeEpoch(data.location.localtime_epoch, forecast.forecastday[0].hour);
