@@ -45,7 +45,7 @@ function geocoding(position){
 
 // 텍스트 삽입
 function insertData(data){
-    // console.log(data)
+    console.log(data)
     const current = data.current;
     const forecast = data.forecast;
     const currentHour = timeEpoch(data.location.localtime_epoch, forecast.forecastday[0].hour);
@@ -134,11 +134,11 @@ const weatherTranslations = {
 };
 // 텍스트 일치화
 const weatherTextUnify = {
-    "비" : ["이슬비"],
+    "비" : ["이슬비","폭우"],
     "폭풍우" : [],
-    "눈" : [],
+    "눈" : ["폭설","눈보라"],
     "흐림" : ["흐린", "매우 흐림"],
-    "구름 많음" : [],
+    "구름 많음" : ["구름 낀"],
     "맑음" : ["화창함"],
 };
 // 텍스트 통일 시키기
