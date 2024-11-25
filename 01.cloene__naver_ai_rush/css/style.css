@@ -1329,6 +1329,7 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
 }
 .page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list__wrap {
   margin-top: 60px;
+  mix-blend-mode: exclusion;
 }
 .page--main .main__contents.main__contents--outline .tab__contents--startup .partner__list {
   display: flex;

@@ -222,7 +222,7 @@ $position__area--relative--padding: (230px 0);
                     li{background-image: $color--point-gradient02; }
                 }
 
-                .partner__list__wrap{margin-top: 60px;}
+                .partner__list__wrap{margin-top: 60px; mix-blend-mode: exclusion}
                 .partner__list{
                     display: flex; align-items: center; 
                     flex-wrap: wrap;
