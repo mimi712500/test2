@@ -145,7 +145,7 @@ $(function(){
         if (prevScrollTop < scrollTop) { // 내림
             isHeaderTop(true);
             
-        } else if(prevScrollTop >= scrollTop || scrollTop === 10){ // 올림 || 스크롤 0일 때
+        } else if(prevScrollTop >= scrollTop || scrollTop >= 10){ // 올림 || 스크롤 10 이하일 때
             isHeaderTop(false);
         }
         prevScrollTop = scrollTop;
