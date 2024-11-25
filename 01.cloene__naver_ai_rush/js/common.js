@@ -83,12 +83,12 @@ $(function(){
             $("#header").removeClass("header--blend-mode");
         }
     };
-    // header (스크롤 시) 보이기/숨기기
+    // header (스크롤 시) 숨기기/보이기
     function isHeaderTop(boolean){
         if(boolean){
-            $("#header").removeClass("top"); // 보이기
-        }else{
             $("#header").addClass("top"); // 숨기기
+        }else{
+            $("#header").removeClass("top"); // 보이기
         }
     };
 
@@ -143,10 +143,10 @@ $(function(){
         const wH = $(window).height();
 
         if (prevScrollTop < scrollTop) { // 내림
-            isHeaderTop(false);
-            
-        } else if(prevScrollTop >= scrollTop || scrollTop <= 10){ // 올림 || 스크롤 10 이하일 때
             isHeaderTop(true);
+            
+        } else if(prevScrollTop >= scrollTop || scrollTop === 10){ // 올림 || 스크롤 0일 때
+            isHeaderTop(false);
         }
         prevScrollTop = scrollTop;
     }
