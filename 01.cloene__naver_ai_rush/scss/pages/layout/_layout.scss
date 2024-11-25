@@ -10,6 +10,7 @@ $header__inner--padding:(0 120px);
     transform: translateY(0); 
     transition: transform 0.5s ease-in-out; 
     &.top{transform: translateY(-100%); }
+    &.fix{transform: translateY(0) !important; }
     &.header--blend-mode{mix-blend-mode: exclusion; }
     .header__inner{
         

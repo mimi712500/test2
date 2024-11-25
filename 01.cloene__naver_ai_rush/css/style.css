@@ -548,6 +548,9 @@ h2.m__text--hide, h2.t__text--hide, h3.m__text--hide, h3.t__text--hide {
 #header.top {
   transform: translateY(-100%);
 }
+#header.fix {
+  transform: translateY(0) !important;
+}
 #header.header--blend-mode {
   mix-blend-mode: exclusion;
 }

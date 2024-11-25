@@ -145,11 +145,11 @@ $(function(){
         if (prevScrollTop < scrollTop) { // 내림
             isHeaderTop(true);
             
-        } else if(prevScrollTop >= scrollTop){ // 올림 
+        } else if(prevScrollTop >= scrollTop || scrollTop < 10){ // 올림 
             isHeaderTop(false);
         }
 
-        if( scrollTop <= 10)  isHeaderTop(false); // 스크롤 10 이하일 때
+        scrollTop < 10 ? $("#header").addClass("fix") : $("#header").removeClass("fix"); // 고정 헤더
         prevScrollTop = scrollTop;
     }
 
